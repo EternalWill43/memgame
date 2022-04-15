@@ -19,7 +19,7 @@ function App() {
     {
       setHiScore(score);
     }
-  }, [score])
+  }, [score, hiScore])
   return (
     <div className="App">
       <Banner/>
