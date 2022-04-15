@@ -13,7 +13,6 @@ function Pokemon() {
                 if (response.ok) return response.json();
             })
             .then(data => { 
-                console.log(data);
                 setName(prev => [...prev, data.species.name]);
                 setUrl(prev => [...prev, data.sprites['front_default']]);
             })
