@@ -23,6 +23,7 @@ function Pokemon(props: cProps) {
         if (props.guesses.includes(s)) 
         {
             props.setScore(0);
+            props.setGuesses([]);
         }
         else
         {
