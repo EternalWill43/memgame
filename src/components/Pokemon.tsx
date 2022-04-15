@@ -21,7 +21,7 @@ function Pokemon() {
     }, []);
     return (
         <div className="container">{url.map((lnk, i) => 
-            <Card sx={{m: 5, maxWidth:150}} className="pokecard"><img src={lnk}/><span className="name">{name[i]}</span></Card>)}     
+            <Card sx={{m: 5, maxWidth:150}} className="pokecard"><img alt='pokemon' src={lnk}/><span className="name">{name[i]}</span></Card>)}     
         </div>
     )
 }
