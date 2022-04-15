@@ -13,13 +13,17 @@ export interface cProps {
 function App() {
   const [score, setScore] = useState<number>(0);
   const [guesses, setGuesses] = useState<string[]>([]);
+  const [hiScore, setHiScore] = useState<number>(0);
   useEffect(() => {
-    setScore(0);
-  }, [])
+    if (score > hiScore)
+    {
+      setHiScore(score);
+    }
+  }, [score])
   return (
     <div className="App">
       <Banner/>
-      <div>Your score is: {score}</div>
+      <div className="scores"><div>Score: {score}</div><div>High score: {hiScore}</div></div>
       <Pokemon guesses={guesses} score={score} setScore={setScore} setGuesses={setGuesses}/>
     </div>
   );
