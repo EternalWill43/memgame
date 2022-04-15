@@ -2,9 +2,11 @@ import { Card } from '@mui/material';
 import {useEffect, useState} from 'react';
 import { cProps } from '../App';
 
+
 function Pokemon(props: cProps) {
     const [url, setUrl] = useState<string[]>([]);
     const [name, setName] = useState<string[]>([]);
+
     useEffect(() => {
         for (let i = 0; i < 10; i++) 
         {
@@ -19,6 +21,8 @@ function Pokemon(props: cProps) {
             })
         }
     }, []);
+
+
     function loadMore(s: string) {
         if (props.guesses.includes(s)) 
         {
@@ -47,9 +51,14 @@ function Pokemon(props: cProps) {
             })
         }
     }
+
     return (
         <div className="container">{url.map((lnk, i) => 
-            <Card onClick={() => loadMore(name[i])} sx={{m: 5, maxWidth:150}} className="pokecard"><img alt='pokemon' src={lnk}/><span className="name">{name[i]}</span></Card>)}     
+            <Card onClick={() => loadMore(name[i])} sx={{m: 5, width: 200, height: 200}} 
+                className="pokecard">
+                    <img alt='pokemon' src={lnk}/>
+                    <span className="name">{name[i]}</span>
+            </Card>)}     
         </div>
     )
 }
