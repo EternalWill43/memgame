@@ -14,3 +14,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
